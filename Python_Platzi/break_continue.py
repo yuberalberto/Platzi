@@ -1,7 +1,8 @@
 def run():
     for contador in range(1000):
-        if contador % 2 != 0:
-            continue
+        if contador >= 500:
+            # continue
+            break
         print(contador)
 
 if __name__ == "__main__":
