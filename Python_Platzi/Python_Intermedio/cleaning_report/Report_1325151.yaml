@@ -1,0 +1,2889 @@
+# id: sector number
+# flow_mode: [mode 0, 1, 2, 3]
+# pressure: [mode 0, 1, 2]
+# vacuum: [enabled bool]
+# time: [min]
+# computation_time: [s]
+# voltage: [V]
+# area: [sq.ft]
+# swept area: [sq.ft]
+# coverage_rate: [%]
+# wall_distance_rate: [%]
+# performance: [sq.ft/hr]
+# water_usage: list [mode 1, 2, 3, 4] in [L]
+# path_length: [m]
+# coverage_efficiency: [%]
+# average_velocity: [m/s]
+# trajectory_time: [s]
+# sector_configuration/wall_distance: [m]
+# sector_configuration/deflection_radius: [m]
+# wall_distance_histogram: list [distance interval 0cm~5cm, 5cm~10cm,..., 55cm+] in [%]
+# velocity_histograms: 
+#  - bin_size: [m/s]
+#  - last_bin_threshold: [m/s]
+#  - time_vs_velocity_histogram: [s vs m/s]
+#  - distance_vs_velocity_histogram: [m vs m/s]
+# time_histograms: [histogram msg]
+reality_type: physical
+hardware_version: 1_5_3
+cleaning_head_width: 32
+has_side_sweeper: false
+squeegee_size: large
+robot_description: neo32
+user_name: Claudia Reyes
+user_id: 4408
+cleaning_plan: 42927-9339-599_604
+flow_mode: 2
+pressure: 1
+vacuum: 1
+start_time: 2021-04-28 12:00:37
+end_time: 2021-04-28 13:00:48
+start_time_local: 2021-04-28 08:00:37
+end_time_local: 2021-04-28 09:00:48
+start_voltage: 36.29999923706055
+end_voltage: 35.29999923706055
+localization:
+  localization_algorithm:
+    name: amcl
+  start_pose_corrector_mode:
+    front_laser_min_score: 0.59999999999999998
+    front_laser_score: ""
+    min_score: 0.40000000000000002
+    name: scan_matcher
+    score: 0.45870441198348999
+coverage_event:
+  - count: 1
+    name: SECTOR RE-ORDERING
+    line: 387
+    type: 1
+    timestamp_local: 2021-04-28 08:34:08
+    details: "sector_queue: [0, 1, 2, 3, 4, 5, 5, 6, 7]; current_index: 5"
+    sector: -1
+    tour_sequence: 0
+    timestamp: 2021-04-28 12:34:08
+    phase: ""
+    file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/inter_sector_planner/src/inter_sector.cpp
+  - name: SECTOR CANCELLATION
+    file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/inter_sector_planner/src/inter_sector.cpp
+    line: 371
+    type: 1
+    details: sector 5 cancelled
+    count: 1
+    sector: -1
+    tour_sequence: 0
+    timestamp: 2021-04-28 12:34:58
+    timestamp_local: 2021-04-28 08:34:58
+    phase: ""
+  - name: COMPLETE ALL SECTORS
+    file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/inter_sector_planner/src/inter_sector.cpp
+    line: 671
+    type: 0
+    details: ""
+    count: 1
+    sector: -1
+    tour_sequence: 0
+    timestamp: 2021-04-28 13:00:48
+    timestamp_local: 2021-04-28 09:00:48
+    phase: ""
+counters:
+  CP_FailedDeflection: 0
+  CP_PathRemoved: 2
+  CP_VerySlowVelocityCommand: 0
+  SYS_Memory_Used_00_to_01_GB: 725
+  SYS_Memory_Used_02_to_03_GB: 1
+  SYS_Memory_Used_03_to_04_GB: 3
+  SYS_Memory_Used_04_to_05_GB: 357
+  SYS_Memory_Used_05_to_06_GB: 364
+  SYS_Sensor_Back_Laser_Rate_Failure: 52
+sectors:
+  - id: 0
+    hash: 0
+    visitation_id: 0
+    time: 6.0103
+    area: 1176.7365
+    swept_only_area: 0.0000
+    cleanable_area: 1308.8633
+    rate: 89.9052
+    wall_distance_rate: 9.9214
+    path_length: 212.3194
+    coverage_efficiency: 65.4252
+    average_velocity: 0.5888
+    performance: 11747.2758
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [2.4513, 2.8658, 3.4184, 1.8987]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_NORMAL: 45.54
+          DYNAMICS_VERY_SLOW: 8.25
+          DYNAMICS_TIPTOE_SLOW: 29.45
+      - Mapping:
+          DYNAMICS_TIPTOE_SLOW: 27.30
+          DYNAMICS_NORMAL: 59.15
+      - Cleaning:
+          DYNAMICS_TIPTOE_SLOW: 47.50
+          DYNAMICS_NORMAL: 22.20
+          DYNAMICS_VERY_SLOW: 72.35
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0682
+      deflection calculation: 0.3595
+      localplanner computation: 313.6128
+      nominal row generation: 1.6097
+      save end of path tail: 0.3731
+      start pose optimization and planning: 34.6633
+      store path checking results: 0.0107
+      total: 351.9015
+      transition calculation: 0.4212
+      update maps: 1.6180
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 0.00
+          MOTION_ARC: 0.00
+          MOTION_WAYPOINTS: 82.70
+      - Mapping:
+          MOTION_STAR: 72.50
+          MOTION_ARC: 13.00
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 112.10
+          MOTION_ARC: 30.35
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      time_vs_velocity_histogram:
+        - 6.496640682220459
+        - 5.751253604888916
+        - 84.10814523696899
+        - 21.73709392547607
+        - 15.99322199821472
+        - 23.30701684951782
+        - 21.50404500961304
+        - 42.84704947471619
+        - 7.503002882003784
+        - 5.198261022567749
+        - 4.750380516052246
+        - 4.650228977203369
+        - 5.001727342605591
+        - 62.69881963729858
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      last_bin_threshold: 2
+      bin_size: 0.1
+      distance_vs_velocity_histogram:
+        - 0.3348298815192841
+        - 0.852643517603729
+        - 25.03155463065437
+        - 7.248798541239129
+        - 7.298759274703952
+        - 12.9743586489323
+        - 13.99842138346514
+        - 31.38289484301321
+        - 6.465612206845455
+        - 5.007084263829567
+        - 5.047412968782588
+        - 5.364274957695801
+        - 6.21849927147401
+        - 85.12372228913991
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    coverage_event:
+      - line: 61
+        name: SECTOR START
+        tour_sequence: 0
+        details: ""
+        timestamp: 2021-04-28 12:00:45
+        count: 1
+        type: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        sector: 0
+        timestamp_local: 2021-04-28 08:00:45
+        phase: ""
+      - name: INTER SECTOR PHASE START
+        count: 1
+        tour_sequence: 0
+        sector: 0
+        type: 0
+        details: ""
+        line: 231
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        timestamp_local: 2021-04-28 08:00:46
+        timestamp: 2021-04-28 12:00:46
+        phase: Inter Sector
+      - name: MAPPING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        sector: 0
+        details: ""
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:02:46
+        type: 0
+        count: 1
+        line: 338
+        phase: Mapping
+        timestamp_local: 2021-04-28 08:02:46
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        details: ""
+        line: 235
+        name: MAPPING TO CLEANING PHASE START
+        type: 0
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:04:13
+        timestamp_local: 2021-04-28 08:04:13
+        phase: Mapping To Cleaning
+      - name: CLEANING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        line: 338
+        type: 0
+        details: ""
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:04:15
+        timestamp_local: 2021-04-28 08:04:15
+        phase: Cleaning
+      - name: SECTOR COMPLETE
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        line: 186
+        type: 0
+        details: ""
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:06:38
+        timestamp_local: 2021-04-28 08:06:38
+        phase: ""
+      - name: SPACING VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 154
+        type: 1
+        details: 1 minor spacing violations
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:06:38
+        timestamp_local: 2021-04-28 08:06:38
+        phase: Report
+      - name: CURVATURE VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 174
+        type: 1
+        details: 4 minor curvature violations
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:06:38
+        timestamp_local: 2021-04-28 08:06:38
+        phase: Report
+      - name: SLOPE CONTINUITY VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 182
+        type: 1
+        details: 36 minor slope continuity violations
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:06:38
+        timestamp_local: 2021-04-28 08:06:38
+        phase: Report
+      - name: SBPL SUCCESS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 172
+        type: 0
+        details: "sector: 0; Success: 1; time used: 11.0828s"
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:06:39
+        timestamp_local: 2021-04-28 08:06:39
+        phase: Report
+      - name: SBPL FAIL
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 177
+        type: 0
+        details: "sector: 0; Fail: 14; time used: 16.1311s"
+        count: 1
+        sector: 0
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:06:39
+        timestamp_local: 2021-04-28 08:06:39
+        phase: Report
+  - id: 1
+    hash: 1
+    visitation_id: 1
+    time: 5.1673
+    area: 841.6832
+    swept_only_area: 0.0000
+    cleanable_area: 1003.7606
+    rate: 83.8530
+    wall_distance_rate: 26.6378
+    path_length: 166.3732
+    coverage_efficiency: 59.7202
+    average_velocity: 0.5366
+    performance: 9773.1472
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [2.1570, 2.4957, 2.9473, 1.7054]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_TIPTOE_SLOW: 22.32
+          DYNAMICS_NORMAL: 8.85
+      - Mapping:
+          DYNAMICS_TIPTOE_SLOW: 27.30
+          DYNAMICS_NORMAL: 71.00
+      - Cleaning:
+          DYNAMICS_NORMAL: 9.60
+          DYNAMICS_TIPTOE_SLOW: 42.35
+          DYNAMICS_VERY_SLOW: 99.35
+          OBSTACLE_PAUSE: 12.05
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0744
+      deflection calculation: 0.2976
+      localplanner computation: 295.6346
+      nominal row generation: 1.2045
+      save end of path tail: 0.3183
+      start pose optimization and planning: 10.4956
+      store path checking results: 0.0051
+      total: 309.3767
+      transition calculation: 0.4653
+      update maps: 1.1893
+      wait for costmap: 0.0500
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 6.65
+          MOTION_ARC: 0.00
+          MOTION_WAYPOINTS: 24.70
+      - Mapping:
+          MOTION_STAR: 63.10
+          MOTION_ARC: 21.85
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 135.05
+          MOTION_ARC: 27.45
+          MOTION_WAYPOINTS: 18.55
+    velocity_histograms:
+      bin_size: 0.1
+      distance_vs_velocity_histogram:
+        - 0.2903664272825724
+        - 0.7055428250094629
+        - 10.78488531981548
+        - 4.158307863527986
+        - 2.119485239357339
+        - 4.198458419674399
+        - 6.944644551914607
+        - 16.39375109376906
+        - 3.626541287054043
+        - 4.16080871322953
+        - 4.518270785196822
+        - 3.251159973888317
+        - 2.945490161630734
+        - 28.20894870401442
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      last_bin_threshold: 2
+      time_vs_velocity_histogram:
+        - 5.149357557296753
+        - 4.600358247756958
+        - 36.34989404678345
+        - 12.5496518611908
+        - 4.646145105361938
+        - 7.538728952407837
+        - 10.61681246757507
+        - 22.49750375747681
+        - 4.199986696243286
+        - 4.449431896209717
+        - 4.100628852844238
+        - 2.99633002281189
+        - 2.204562664031982
+        - 20.8499550819397
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    coverage_event:
+      - line: 61
+        timestamp_local: 2021-04-28 08:06:38
+        timestamp: 2021-04-28 12:06:38
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        phase: ""
+        count: 1
+        sector: 1
+        tour_sequence: 0
+        type: 0
+        name: SECTOR START
+        details: ""
+      - line: 231
+        sector: 1
+        tour_sequence: 0
+        phase: Inter Sector
+        details: ""
+        timestamp_local: 2021-04-28 08:06:39
+        timestamp: 2021-04-28 12:06:39
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        count: 1
+        name: INTER SECTOR PHASE START
+        type: 0
+      - details: ""
+        sector: 1
+        type: 0
+        timestamp_local: 2021-04-28 08:07:22
+        line: 338
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: MAPPING PHASE START
+        phase: Mapping
+        timestamp: 2021-04-28 12:07:22
+        tour_sequence: 0
+        count: 1
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: MAPPING TO CLEANING PHASE START
+        type: 0
+        sector: 1
+        tour_sequence: 0
+        count: 1
+        timestamp: 2021-04-28 12:09:02
+        timestamp_local: 2021-04-28 08:09:02
+        phase: Mapping To Cleaning
+        line: 235
+        details: ""
+      - tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        details: ""
+        name: CLEANING PHASE START
+        line: 338
+        type: 0
+        count: 1
+        sector: 1
+        timestamp_local: 2021-04-28 08:09:03
+        phase: Cleaning
+        timestamp: 2021-04-28 12:09:03
+      - count: 1
+        timestamp_local: 2021-04-28 08:11:23
+        sector: 1
+        phase: Cleaning
+        timestamp: 2021-04-28 12:11:23
+        type: 2
+        tour_sequence: 0
+        details: "coordinates: [robot: [-17.0154, 32.9407, 1.51903]; carrot: [-17.0274, 32.9412, 1.47245]]; current index: 2731; remaining index: 414; dynamics mode: 1"
+        name: STUCK BY OBSTACLE
+        line: 1089
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/local_controller/src/local_controller_supervisor.cpp
+      - name: SECTOR COMPLETE
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        line: 186
+        type: 0
+        count: 1
+        details: ""
+        tour_sequence: 0
+        sector: 1
+        timestamp: 2021-04-28 12:11:48
+        timestamp_local: 2021-04-28 08:11:48
+        phase: ""
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        name: CURVATURE VIOLATIONS
+        type: 1
+        details: 14 minor curvature violations
+        count: 1
+        sector: 1
+        line: 174
+        timestamp: 2021-04-28 12:11:48
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:11:48
+        phase: Report
+      - name: SLOPE CONTINUITY VIOLATIONS
+        line: 182
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        details: 26 minor slope continuity violations
+        type: 1
+        timestamp: 2021-04-28 12:11:48
+        count: 1
+        timestamp_local: 2021-04-28 08:11:48
+        sector: 1
+        phase: Report
+        tour_sequence: 0
+      - name: SBPL SUCCESS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 172
+        type: 0
+        details: "sector: 1; Success: 5; time used: 12.2931s"
+        sector: 1
+        count: 1
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:11:48
+        phase: Report
+        timestamp_local: 2021-04-28 08:11:48
+      - timestamp: 2021-04-28 12:11:48
+        timestamp_local: 2021-04-28 08:11:48
+        phase: Report
+        name: SBPL FAIL
+        line: 177
+        type: 0
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        details: "sector: 1; Fail: 7; time used: 1.99242s"
+        sector: 1
+        tour_sequence: 0
+  - id: 2
+    hash: 2
+    visitation_id: 2
+    time: 5.4347
+    area: 879.6259
+    swept_only_area: 0.0000
+    cleanable_area: 944.5322
+    rate: 93.1282
+    wall_distance_rate: 32.8589
+    path_length: 176.4338
+    coverage_efficiency: 58.8534
+    average_velocity: 0.5411
+    performance: 9711.1607
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [2.3538, 2.7125, 3.1906, 1.8757]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_VERY_SLOW: 7.10
+          DYNAMICS_TIPTOE_SLOW: 26.45
+          DYNAMICS_NORMAL: 11.70
+      - Mapping:
+          DYNAMICS_TIPTOE_SLOW: 26.50
+          DYNAMICS_VERY_SLOW: 53.45
+          DYNAMICS_NORMAL: 28.85
+      - Cleaning:
+          DYNAMICS_NORMAL: 17.65
+          DYNAMICS_TIPTOE_SLOW: 47.80
+          DYNAMICS_VERY_SLOW: 87.40
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0499
+      deflection calculation: 0.3205
+      localplanner computation: 308.7780
+      nominal row generation: 0.9893
+      save end of path tail: 0.3822
+      start pose optimization and planning: 13.8620
+      store path checking results: 0.0043
+      total: 325.6581
+      transition calculation: 0.4535
+      update maps: 0.8402
+      wait for costmap: 0.1250
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 0.00
+          MOTION_ARC: 0.00
+          MOTION_WAYPOINTS: 43.25
+      - Mapping:
+          MOTION_STAR: 90.60
+          MOTION_ARC: 14.50
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 115.35
+          MOTION_ARC: 36.10
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      last_bin_threshold: 2
+      bin_size: 0.1
+      time_vs_velocity_histogram:
+        - 3.647087812423706
+        - 4.399554014205933
+        - 80.29312920570374
+        - 36.55584383010864
+        - 17.75548815727234
+        - 14.14975476264954
+        - 23.00081133842468
+        - 93.09486126899719
+        - 3.600690841674805
+        - 3.951517820358276
+        - 3.547851324081421
+        - 2.600895881652832
+        - 1.749204158782959
+        - 18.40002846717834
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      distance_vs_velocity_histogram:
+        - 0.2139324951098895
+        - 0.6948646970393783
+        - 24.08758276449738
+        - 11.88736572246669
+        - 8.054845023319132
+        - 7.766690730024296
+        - 15.30866818276649
+        - 67.61191000021259
+        - 3.053163598733158
+        - 3.773246418558754
+        - 3.741657901236214
+        - 3.000889489580474
+        - 2.200110667941392
+        - 24.96307732241766
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    coverage_event:
+      - phase: ""
+        timestamp: 2021-04-28 12:11:48
+        sector: 2
+        count: 1
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        timestamp_local: 2021-04-28 08:11:48
+        name: SECTOR START
+        type: 0
+        line: 61
+        details: ""
+      - tour_sequence: 0
+        timestamp: 2021-04-28 12:11:48
+        name: INTER SECTOR PHASE START
+        timestamp_local: 2021-04-28 08:11:48
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        phase: Inter Sector
+        count: 1
+        line: 231
+        type: 0
+        sector: 2
+        details: ""
+      - line: 338
+        details: ""
+        count: 1
+        name: MAPPING PHASE START
+        tour_sequence: 0
+        phase: Mapping
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        timestamp_local: 2021-04-28 08:12:49
+        type: 0
+        sector: 2
+        timestamp: 2021-04-28 12:12:49
+      - name: MAPPING TO CLEANING PHASE START
+        sector: 2
+        count: 1
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:14:39
+        timestamp: 2021-04-28 12:14:39
+        phase: Mapping To Cleaning
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        details: ""
+        type: 0
+        line: 235
+      - phase: Cleaning
+        line: 338
+        type: 0
+        name: CLEANING PHASE START
+        count: 1
+        timestamp: 2021-04-28 12:14:40
+        details: ""
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        timestamp_local: 2021-04-28 08:14:40
+        sector: 2
+        tour_sequence: 0
+      - line: 186
+        timestamp: 2021-04-28 12:17:14
+        timestamp_local: 2021-04-28 08:17:14
+        phase: ""
+        count: 1
+        tour_sequence: 0
+        name: SECTOR COMPLETE
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        sector: 2
+        type: 0
+        details: ""
+      - name: SPACING VIOLATIONS
+        line: 154
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        timestamp: 2021-04-28 12:17:14
+        sector: 2
+        tour_sequence: 0
+        phase: Report
+        details: 1 minor spacing violations
+        timestamp_local: 2021-04-28 08:17:14
+        count: 1
+        type: 1
+      - name: CURVATURE VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 174
+        type: 1
+        details: 4 minor curvature violations
+        count: 1
+        sector: 2
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:17:14
+        phase: Report
+        timestamp: 2021-04-28 12:17:14
+      - name: SLOPE CONTINUITY VIOLATIONS
+        line: 182
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        tour_sequence: 0
+        details: 38 minor slope continuity violations
+        type: 1
+        timestamp: 2021-04-28 12:17:14
+        sector: 2
+        timestamp_local: 2021-04-28 08:17:14
+        count: 1
+        phase: Report
+      - line: 172
+        name: SBPL SUCCESS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        type: 0
+        details: "sector: 2; Success: 2; time used: 9.68131s"
+        sector: 2
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:17:14
+        count: 1
+        timestamp: 2021-04-28 12:17:14
+        phase: Report
+      - timestamp: 2021-04-28 12:17:14
+        type: 0
+        timestamp_local: 2021-04-28 08:17:14
+        name: SBPL FAIL
+        sector: 2
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 177
+        count: 1
+        phase: Report
+        details: "sector: 2; Fail: 2; time used: 2.19617s"
+        tour_sequence: 0
+  - id: 3
+    hash: 3
+    visitation_id: 3
+    time: 7.5905
+    area: 1687.6450
+    swept_only_area: 0.0000
+    cleanable_area: 1784.5739
+    rate: 94.5685
+    wall_distance_rate: 34.9823
+    path_length: 295.7041
+    coverage_efficiency: 67.3720
+    average_velocity: 0.6493
+    performance: 13340.2670
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [3.4659, 4.0400, 4.8056, 2.7003]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_TIPTOE_SLOW: 22.30
+          DYNAMICS_NORMAL: 11.05
+      - Mapping:
+          DYNAMICS_TIPTOE_SLOW: 70.45
+          DYNAMICS_NORMAL: 116.15
+          DYNAMICS_VERY_SLOW: 7.80
+      - Cleaning:
+          DYNAMICS_TIPTOE_SLOW: 73.40
+          DYNAMICS_VERY_SLOW: 106.90
+          DYNAMICS_NORMAL: 29.65
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0869
+      deflection calculation: 0.5302
+      localplanner computation: 439.8443
+      nominal row generation: 1.3345
+      save end of path tail: 0.2714
+      start pose optimization and planning: 11.5168
+      store path checking results: 0.0192
+      total: 454.8890
+      transition calculation: 0.4251
+      update maps: 1.2558
+      wait for costmap: 0.0500
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 6.65
+          MOTION_ARC: 0.00
+          MOTION_WAYPOINTS: 26.55
+      - Mapping:
+          MOTION_STAR: 163.65
+          MOTION_ARC: 29.50
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 170.00
+          MOTION_ARC: 41.05
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      time_vs_velocity_histogram:
+        - 4.750821113586426
+        - 5.396394014358521
+        - 127.9762666225433
+        - 41.4245810508728
+        - 19.79921555519104
+        - 20.35137867927551
+        - 21.24014282226562
+        - 76.30910158157349
+        - 6.648644924163818
+        - 6.802783966064453
+        - 6.499138116836548
+        - 6.95130729675293
+        - 5.697429418563843
+        - 87.70101952552795
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      bin_size: 0.1
+      last_bin_threshold: 2
+      distance_vs_velocity_histogram:
+        - 0.3043839511197953
+        - 0.8237391195597135
+        - 38.27587310366748
+        - 13.27145577275839
+        - 8.96046476881089
+        - 11.30556420429391
+        - 13.86624165999256
+        - 55.659574442739
+        - 5.564239446027834
+        - 6.595550790575548
+        - 6.704493571280487
+        - 8.194926764395525
+        - 7.00834493986753
+        - 119.1102149885222
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    coverage_event:
+      - sector: 3
+        count: 1
+        name: SECTOR START
+        phase: ""
+        timestamp_local: 2021-04-28 08:17:14
+        type: 0
+        line: 61
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:17:14
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        details: ""
+      - type: 0
+        name: INTER SECTOR PHASE START
+        count: 1
+        tour_sequence: 0
+        phase: Inter Sector
+        details: ""
+        timestamp_local: 2021-04-28 08:17:15
+        line: 231
+        sector: 3
+        timestamp: 2021-04-28 12:17:15
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - tour_sequence: 0
+        phase: Mapping
+        count: 1
+        sector: 3
+        timestamp: 2021-04-28 12:18:01
+        type: 0
+        line: 338
+        name: MAPPING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        timestamp_local: 2021-04-28 08:18:01
+        details: ""
+      - name: MAPPING TO CLEANING PHASE START
+        details: ""
+        count: 1
+        line: 235
+        tour_sequence: 0
+        phase: Mapping To Cleaning
+        timestamp_local: 2021-04-28 08:21:17
+        sector: 3
+        timestamp: 2021-04-28 12:21:17
+        type: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - timestamp: 2021-04-28 12:21:19
+        type: 0
+        sector: 3
+        line: 338
+        count: 1
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: CLEANING PHASE START
+        details: ""
+        timestamp_local: 2021-04-28 08:21:19
+        phase: Cleaning
+      - phase: ""
+        type: 0
+        timestamp_local: 2021-04-28 08:24:49
+        timestamp: 2021-04-28 12:24:49
+        line: 186
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        details: ""
+        sector: 3
+        name: SECTOR COMPLETE
+        tour_sequence: 0
+      - sector: 3
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 174
+        details: 6 minor curvature violations
+        phase: Report
+        timestamp_local: 2021-04-28 08:24:49
+        type: 1
+        name: CURVATURE VIOLATIONS
+        count: 1
+        timestamp: 2021-04-28 12:24:49
+        tour_sequence: 0
+      - phase: Report
+        name: SLOPE CONTINUITY VIOLATIONS
+        line: 182
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        type: 1
+        sector: 3
+        details: 46 minor slope continuity violations
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:24:49
+        timestamp: 2021-04-28 12:24:49
+      - name: SBPL SUCCESS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 172
+        details: "sector: 3; Success: 4; time used: 9.05334s"
+        type: 0
+        count: 1
+        timestamp: 2021-04-28 12:24:50
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:24:50
+        sector: 3
+        phase: Report
+      - details: "sector: 3; Fail: 0; time used: 0s"
+        type: 0
+        name: SBPL FAIL
+        count: 1
+        line: 177
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        phase: Report
+        tour_sequence: 0
+        sector: 3
+        timestamp_local: 2021-04-28 08:24:50
+        timestamp: 2021-04-28 12:24:50
+  - id: 4
+    hash: 4
+    visitation_id: 4
+    time: 4.7519
+    area: 939.7423
+    swept_only_area: 0.0000
+    cleanable_area: 965.0644
+    rate: 97.3761
+    wall_distance_rate: 58.4672
+    path_length: 174.7359
+    coverage_efficiency: 63.4866
+    average_velocity: 0.6129
+    performance: 11865.5968
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [2.1170, 2.4673, 2.9345, 1.6498]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_TIPTOE_SLOW: 20.55
+          DYNAMICS_NORMAL: 14.15
+      - Mapping:
+          DYNAMICS_TIPTOE_SLOW: 26.70
+          DYNAMICS_VERY_SLOW: 49.50
+          DYNAMICS_NORMAL: 29.10
+      - Cleaning:
+          DYNAMICS_NORMAL: 34.15
+          DYNAMICS_TIPTOE_SLOW: 44.55
+          DYNAMICS_VERY_SLOW: 49.35
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0430
+      deflection calculation: 0.3044
+      localplanner computation: 269.8155
+      nominal row generation: 1.0000
+      save end of path tail: 0.3990
+      start pose optimization and planning: 11.5246
+      store path checking results: 0.0085
+      total: 284.5988
+      transition calculation: 0.4385
+      update maps: 0.9308
+      wait for costmap: 0.0750
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 6.65
+          MOTION_ARC: 1.45
+          MOTION_WAYPOINTS: 26.75
+      - Mapping:
+          MOTION_STAR: 90.80
+          MOTION_ARC: 14.40
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 91.75
+          MOTION_ARC: 36.70
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      last_bin_threshold: 2
+      time_vs_velocity_histogram:
+        - 2.894518136978149
+        - 4.49955415725708
+        - 70.94349217414856
+        - 24.5601499080658
+        - 7.94645094871521
+        - 7.49888801574707
+        - 7.998365879058838
+        - 88.00392484664917
+        - 3.398787498474121
+        - 2.899875402450562
+        - 2.799396753311157
+        - 2.901202917098999
+        - 2.899549245834351
+        - 38.50003600120544
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      bin_size: 0.1
+      distance_vs_velocity_histogram:
+        - 0.1901066373739386
+        - 0.6950295849309189
+        - 21.20241943903154
+        - 7.845205753041057
+        - 3.579403233328604
+        - 4.138001397725464
+        - 5.275534297088344
+        - 63.942832642437
+        - 2.891170200949009
+        - 2.759023960532143
+        - 2.954409327057243
+        - 3.343338787981552
+        - 3.612215153905962
+        - 52.22474556100654
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    coverage_event:
+      - type: 0
+        tour_sequence: 0
+        name: SECTOR START
+        timestamp: 2021-04-28 12:24:50
+        sector: 4
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        line: 61
+        count: 1
+        timestamp_local: 2021-04-28 08:24:50
+        details: ""
+        phase: ""
+      - type: 0
+        name: INTER SECTOR PHASE START
+        timestamp_local: 2021-04-28 08:24:50
+        phase: Inter Sector
+        timestamp: 2021-04-28 12:24:50
+        tour_sequence: 0
+        line: 231
+        details: ""
+        count: 1
+        sector: 4
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - count: 1
+        details: ""
+        line: 338
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        type: 0
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:25:38
+        timestamp_local: 2021-04-28 08:25:38
+        phase: Mapping
+        name: MAPPING PHASE START
+      - details: ""
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:27:24
+        timestamp_local: 2021-04-28 08:27:24
+        phase: Mapping To Cleaning
+        name: MAPPING TO CLEANING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        line: 235
+        type: 0
+      - type: 0
+        name: CLEANING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        line: 338
+        details: ""
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:27:26
+        timestamp_local: 2021-04-28 08:27:26
+        phase: Cleaning
+      - name: SECTOR COMPLETE
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        line: 186
+        type: 0
+        details: ""
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:29:34
+        timestamp_local: 2021-04-28 08:29:34
+        phase: ""
+      - phase: Report
+        name: SPACING VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 154
+        type: 1
+        details: 2 minor spacing violations
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:29:34
+        timestamp_local: 2021-04-28 08:29:34
+      - name: CURVATURE VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 174
+        type: 1
+        details: 4 minor curvature violations
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:29:34
+        timestamp_local: 2021-04-28 08:29:34
+        phase: Report
+      - name: SLOPE CONTINUITY VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 182
+        type: 1
+        details: 2 minor slope continuity violations
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:29:34
+        timestamp_local: 2021-04-28 08:29:34
+        phase: Report
+      - name: SBPL SUCCESS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 172
+        type: 0
+        details: "sector: 4; Success: 2; time used: 10.7453s"
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:29:35
+        timestamp_local: 2021-04-28 08:29:35
+        phase: Report
+      - name: SBPL FAIL
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 177
+        type: 0
+        details: "sector: 4; Fail: 0; time used: 0s"
+        count: 1
+        sector: 4
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:29:35
+        timestamp_local: 2021-04-28 08:29:35
+        phase: Report
+  - id: 5
+    hash: 5
+    visitation_id: 5
+    time: 5.3976
+    area: 342.5611
+    swept_only_area: 0.0000
+    cleanable_area: 2914.7834
+    rate: 11.7525
+    wall_distance_rate: 11.7790
+    path_length: 48.3361
+    coverage_efficiency: 83.6608
+    average_velocity: 0.1493
+    performance: 3807.9061
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [0.6255, 0.7148, 0.8339, 0.5064]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_TIPTOE_SLOW: 27.25
+          DYNAMICS_VERY_SLOW: 4.21
+          DYNAMICS_NORMAL: 97.66
+          OBSTACLE_PAUSE: 72.95
+          USER_PAUSE: 36.10
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0618
+      deflection calculation: 0.4696
+      localplanner computation: 309.2158
+      nominal row generation: 0.6851
+      save end of path tail: 0.2094
+      start pose optimization and planning: 12.2569
+      total: 323.4612
+      transition calculation: 0.0122
+      update maps: 0.4830
+      wait for costmap: 0.2000
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 6.65
+          MOTION_ARC: 0.00
+          MOTION_WAYPOINTS: 161.10
+    velocity_histograms:
+      last_bin_threshold: 2
+      time_vs_velocity_histogram:
+        - 1.05023980140686
+        - 1.4998619556427
+        - 6.100252389907837
+        - 1.700086116790771
+        - 0.9497218132019043
+        - 0.9498193264007568
+        - 2.750269889831543
+        - 1.549938678741455
+        - 0.9000051021575928
+        - 0.9999904632568359
+        - 0.8999755382537842
+        - 0.9999799728393555
+        - 0.9001185894012451
+        - 12.54992771148682
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      distance_vs_velocity_histogram:
+        - 0.05337053693105363
+        - 0.2191136843141501
+        - 1.774660121628639
+        - 0.5318812354526662
+        - 0.4379768758511318
+        - 0.5232360599508141
+        - 1.807286770271551
+        - 1.187271616470231
+        - 0.8209121330930365
+        - 0.9314613541636739
+        - 0.9276183345109855
+        - 1.147754971262822
+        - 1.101997023793833
+        - 17.05496238403503
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      bin_size: 0.1
+    coverage_event:
+      - sector: 5
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        count: 1
+        line: 61
+        type: 0
+        tour_sequence: 0
+        details: ""
+        phase: ""
+        name: SECTOR START
+        timestamp_local: 2021-04-28 08:29:35
+        timestamp: 2021-04-28 12:29:35
+      - details: ""
+        count: 1
+        type: 0
+        sector: 5
+        tour_sequence: 0
+        phase: Inter Sector
+        name: INTER SECTOR PHASE START
+        timestamp: 2021-04-28 12:29:35
+        timestamp_local: 2021-04-28 08:29:35
+        line: 231
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - timestamp_local: 2021-04-28 08:30:31
+        name: STUCK BY OBSTACLE
+        sector: 5
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/local_controller/src/local_controller_supervisor.cpp
+        details: "coordinates: [robot: [-62.3266, 10.2959, 1.74756]; carrot: [-62.3215, 10.2758, 1.72835]]; current index: 762; remaining index: 874; dynamics mode: 3"
+        timestamp: 2021-04-28 12:30:31
+        line: 1089
+        type: 2
+        phase: Inter Sector
+        tour_sequence: 0
+      - sector: 5
+        timestamp_local: 2021-04-28 08:31:41 AM
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:31:41 PM
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/systems/ui/src/ros_interface.cpp
+        phase: Inter Sector
+        line: 534
+        details: The automatic obstacle avoidance planner could not find an automatic detour around local obstacles within the first 60 seconds!
+        type: 1
+        name: ENTERED FEEDBACK REQUESTED STATE
+        count: 2
+      - line: 1089
+        type: 2
+        details: "coordinates: [robot: [-62.2328, 15.5235, 1.80315]; carrot: [-62.2465, 15.5233, 2.28444]]; current index: 198; remaining index: 851; dynamics mode: 3"
+        count: 1
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/local_controller/src/local_controller_supervisor.cpp
+        timestamp_local: 2021-04-28 08:31:57
+        sector: 5
+        phase: Inter Sector
+        timestamp: 2021-04-28 12:31:57
+        name: STUCK BY OBSTACLE
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/local_controller/src/local_controller_supervisor.cpp
+        name: USER PAUSE
+        line: 393
+        type: 2
+        details: "coordinates: [robot: [-62.2323, 15.5232, 1.80266]; carrot: [-62.2465, 15.5233, 2.28444]]; current index: 198; remaining index: 851; dynamics mode: 3"
+        count: 1
+        tour_sequence: 0
+        sector: 5
+        timestamp: 2021-04-28 12:33:11
+        timestamp_local: 2021-04-28 08:33:11
+        phase: Inter Sector
+      - type: 1
+        details: ""
+        count: 1
+        sector: 5
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:34:58
+        timestamp_local: 2021-04-28 08:34:58
+        phase: ""
+        name: SECTOR CANCELLATION
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/intra_sector.cpp
+        line: 437
+      - timestamp: 2021-04-28 12:34:58
+        details: "sector: 5; Success: 3; time used: 14.6504s"
+        type: 0
+        sector: 5
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:34:58
+        phase: Report
+        name: SBPL SUCCESS
+        line: 172
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        timestamp: 2021-04-28 12:34:58
+        name: SBPL FAIL
+        count: 1
+        tour_sequence: 0
+        phase: Report
+        line: 177
+        type: 0
+        details: "sector: 5; Fail: 4; time used: 130.518s"
+        timestamp_local: 2021-04-28 08:34:58
+        sector: 5
+  - id: 6
+    hash: 5
+    visitation_id: 6
+    time: 8.8786
+    area: 2729.7789
+    swept_only_area: 0.0000
+    cleanable_area: 2914.7834
+    rate: 93.6529
+    wall_distance_rate: 16.6125
+    path_length: 400.4682
+    coverage_efficiency: 80.4665
+    average_velocity: 0.7517
+    performance: 18447.3645
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [4.2355, 5.0090, 6.0403, 3.2042]
+    trajectory_time:
+      - Inter Sector:
+          DETOUR_MODE: 89.34
+          DYNAMICS_TIPTOE_SLOW: 7.65
+          DYNAMICS_NORMAL: 6.25
+      - Mapping:
+          DYNAMICS_NORMAL: 171.85
+          DYNAMICS_VERY_SLOW: 17.80
+      - Cleaning:
+          DYNAMICS_NORMAL: 49.04
+          DYNAMICS_VERY_SLOW: 161.01
+          DYNAMICS_TIPTOE_SLOW: 98.80
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.2430
+      deflection calculation: 0.8185
+      localplanner computation: 514.4829
+      nominal row generation: 1.2824
+      save end of path tail: 0.3950
+      start pose optimization and planning: 13.2440
+      store path checking results: 0.0143
+      total: 532.1766
+      transition calculation: 0.4873
+      update maps: 1.2532
+      wait for costmap: 0.2750
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 0.00
+          MOTION_ARC: 0.00
+          MOTION_WAYPOINTS: 13.75
+      - Mapping:
+          MOTION_STAR: 171.40
+          MOTION_ARC: 17.60
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 255.75
+          MOTION_ARC: 50.60
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      distance_vs_velocity_histogram:
+        - 0.3140320067777246
+        - 0.6043989449200742
+        - 28.23665739532008
+        - 15.11091228762177
+        - 18.55214964546431
+        - 19.84905911916098
+        - 16.35790943820804
+        - 54.27435785349237
+        - 5.869010063469553
+        - 6.728949574089923
+        - 6.680837407457798
+        - 6.79072147214475
+        - 7.344924200812196
+        - 213.6566935566132
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      last_bin_threshold: 2
+      time_vs_velocity_histogram:
+        - 5.248122930526733
+        - 3.898853063583374
+        - 94.06236696243286
+        - 44.33725357055664
+        - 40.84487462043762
+        - 35.60972118377686
+        - 24.99676132202148
+        - 74.29690361022949
+        - 6.852885723114014
+        - 6.951657295227051
+        - 6.349377632141113
+        - 5.802070617675781
+        - 5.749480962753296
+        - 157.0973901748657
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      bin_size: 0.1
+    coverage_event:
+      - phase: ""
+        line: 61
+        sector: 6
+        name: SECTOR START
+        count: 1
+        timestamp_local: 2021-04-28 08:34:59
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        type: 0
+        timestamp: 2021-04-28 12:34:59
+        details: ""
+      - timestamp: 2021-04-28 12:34:59
+        type: 0
+        line: 231
+        count: 1
+        details: ""
+        sector: 6
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        tour_sequence: 0
+        phase: Inter Sector
+        name: INTER SECTOR PHASE START
+        timestamp_local: 2021-04-28 08:34:59
+      - line: 338
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        timestamp_local: 2021-04-28 08:35:29
+        name: MAPPING PHASE START
+        tour_sequence: 0
+        phase: Mapping
+        count: 1
+        type: 0
+        sector: 6
+        timestamp: 2021-04-28 12:35:29
+        details: ""
+      - timestamp_local: 2021-04-28 08:38:39
+        phase: Mapping To Cleaning
+        count: 1
+        sector: 6
+        timestamp: 2021-04-28 12:38:39
+        tour_sequence: 0
+        type: 0
+        name: MAPPING TO CLEANING PHASE START
+        line: 235
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        details: ""
+      - phase: Cleaning
+        sector: 6
+        timestamp: 2021-04-28 12:38:41
+        timestamp_local: 2021-04-28 08:38:41
+        tour_sequence: 0
+        name: CLEANING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        type: 0
+        line: 338
+        count: 1
+        details: ""
+      - phase: ""
+        timestamp_local: 2021-04-28 08:43:51
+        name: SECTOR COMPLETE
+        line: 186
+        details: ""
+        type: 0
+        count: 1
+        sector: 6
+        timestamp: 2021-04-28 12:43:51
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - timestamp_local: 2021-04-28 08:43:51
+        sector: 6
+        name: CURVATURE VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        line: 174
+        type: 1
+        timestamp: 2021-04-28 12:43:51
+        phase: Report
+        tour_sequence: 0
+        details: 23 minor curvature violations
+        count: 1
+      - line: 182
+        sector: 6
+        name: SLOPE CONTINUITY VIOLATIONS
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        details: 76 minor slope continuity violations
+        tour_sequence: 0
+        count: 1
+        type: 1
+        timestamp: 2021-04-28 12:43:51
+        timestamp_local: 2021-04-28 08:43:51
+        phase: Report
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        count: 1
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:43:51
+        name: SBPL SUCCESS
+        line: 172
+        timestamp: 2021-04-28 12:43:51
+        phase: Report
+        type: 0
+        details: "sector: 6; Success: 4; time used: 8.14288s"
+        sector: 6
+      - name: SBPL FAIL
+        line: 177
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        type: 0
+        details: "sector: 6; Fail: 2; time used: 1.88525s"
+        count: 1
+        sector: 6
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:43:51
+        timestamp_local: 2021-04-28 08:43:51
+        phase: Report
+  - id: 7
+    hash: 6
+    visitation_id: 7
+    time: 7.3033
+    area: 1135.5107
+    swept_only_area: 0.0000
+    cleanable_area: 2052.4605
+    rate: 55.3244
+    wall_distance_rate: 8.0673
+    path_length: 261.6124
+    coverage_efficiency: 51.2376
+    average_velocity: 0.5970
+    performance: 9328.7404
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [2.9898, 3.4995, 4.1790, 2.3102]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_TIPTOE_SLOW: 27.65
+          DYNAMICS_NORMAL: 43.40
+      - Mapping:
+          DYNAMICS_TIPTOE_SLOW: 82.90
+          DYNAMICS_NORMAL: 143.30
+          OBSTACLE_PAUSE: 36.31
+      - Cleaning:
+          DYNAMICS_TIPTOE_SLOW: 27.60
+          DYNAMICS_VERY_SLOW: 52.00
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.0937
+      deflection calculation: 0.5343
+      localplanner computation: 414.9843
+      nominal row generation: 1.8882
+      save end of path tail: 0.3074
+      start pose optimization and planning: 18.9924
+      store path checking results: 0.0048
+      total: 437.7766
+      transition calculation: 0.1421
+      update maps: 1.3531
+      wait for costmap: 0.5000
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 3.10
+          MOTION_ARC: 6.00
+          MOTION_WAYPOINTS: 62.10
+      - Mapping:
+          MOTION_STAR: 168.95
+          MOTION_ARC: 31.75
+          MOTION_WAYPOINTS: 43.05
+      - Cleaning:
+          MOTION_STAR: 64.80
+          MOTION_ARC: 15.50
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      bin_size: 0.1
+      distance_vs_velocity_histogram:
+        - 0.2650718485772388
+        - 0.917757550187917
+        - 16.38068184880982
+        - 4.93433383525561
+        - 3.811999621162783
+        - 5.4930612628262
+        - 6.383371392283306
+        - 29.06942976445286
+        - 2.728043722596803
+        - 2.505331367464421
+        - 2.927209859338189
+        - 2.795436191846931
+        - 2.35644920635022
+        - 58.68667832995835
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      last_bin_threshold: 2
+      time_vs_velocity_histogram:
+        - 3.941527366638184
+        - 6.201312065124512
+        - 54.62961792945862
+        - 15.46869301795959
+        - 8.404995679855347
+        - 9.945024967193604
+        - 9.850509166717529
+        - 39.95084190368652
+        - 3.199499607086182
+        - 2.600497961044312
+        - 2.749730825424194
+        - 2.4504234790802
+        - 1.950039625167847
+        - 43.14936399459839
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    coverage_event:
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        phase: ""
+        details: ""
+        count: 1
+        sector: 7
+        timestamp: 2021-04-28 12:43:51
+        timestamp_local: 2021-04-28 08:43:51
+        name: SECTOR START
+        type: 0
+        line: 61
+        tour_sequence: 0
+      - sector: 7
+        timestamp_local: 2021-04-28 08:43:52
+        line: 231
+        timestamp: 2021-04-28 12:43:52
+        count: 1
+        name: INTER SECTOR PHASE START
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        type: 0
+        phase: Inter Sector
+        details: ""
+      - tour_sequence: 0
+        type: 0
+        timestamp: 2021-04-28 12:45:24
+        timestamp_local: 2021-04-28 08:45:24
+        name: MAPPING PHASE START
+        details: ""
+        sector: 7
+        line: 338
+        count: 1
+        phase: Mapping
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - line: 1089
+        details: "coordinates: [robot: [-63.8435, 4.2675, 2.90331]; carrot: [-63.842, 4.27006, 2.44812]]; current index: 3012; remaining index: 816; dynamics mode: 0"
+        phase: Mapping
+        name: STUCK BY OBSTACLE
+        type: 2
+        sector: 7
+        count: 1
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/local_controller/src/local_controller_supervisor.cpp
+        timestamp_local: 2021-04-28 08:48:17
+        timestamp: 2021-04-28 12:48:17
+      - details: ""
+        type: 0
+        sector: 7
+        timestamp_local: 2021-04-28 08:49:47
+        tour_sequence: 0
+        line: 235
+        timestamp: 2021-04-28 12:49:47
+        count: 1
+        name: MAPPING TO CLEANING PHASE START
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        phase: Mapping To Cleaning
+      - type: 0
+        phase: Cleaning
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: CLEANING PHASE START
+        count: 1
+        sector: 7
+        details: ""
+        tour_sequence: 0
+        line: 338
+        timestamp: 2021-04-28 12:49:49
+        timestamp_local: 2021-04-28 08:49:49
+      - count: 1
+        details: ""
+        type: 0
+        phase: ""
+        timestamp: 2021-04-28 12:51:09
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:51:09
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: SECTOR COMPLETE
+        sector: 7
+        line: 186
+      - name: SPACING VIOLATIONS
+        type: 2
+        line: 150
+        tour_sequence: 0
+        phase: Report
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        timestamp: 2021-04-28 12:51:09
+        count: 1
+        details: 1 major spacing violations
+        timestamp_local: 2021-04-28 08:51:09
+        sector: 7
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        type: 1
+        name: CURVATURE VIOLATIONS
+        details: 2 minor curvature violations
+        timestamp_local: 2021-04-28 08:51:09
+        sector: 7
+        count: 1
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:51:09
+        phase: Report
+        line: 174
+      - name: SLOPE CONTINUITY VIOLATIONS
+        type: 1
+        tour_sequence: 0
+        sector: 7
+        count: 1
+        timestamp_local: 2021-04-28 08:51:09
+        phase: Report
+        timestamp: 2021-04-28 12:51:09
+        line: 182
+        details: 15 minor slope continuity violations
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+      - timestamp_local: 2021-04-28 08:51:09
+        name: SBPL SUCCESS
+        timestamp: 2021-04-28 12:51:09
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 172
+        type: 0
+        details: "sector: 7; Success: 3; time used: 25.7508s"
+        count: 1
+        sector: 7
+        phase: Report
+      - type: 0
+        name: SBPL FAIL
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 177
+        details: "sector: 7; Fail: 26; time used: 11.9512s"
+        count: 1
+        sector: 7
+        tour_sequence: 0
+        timestamp: 2021-04-28 12:51:09
+        timestamp_local: 2021-04-28 08:51:09
+        phase: Report
+  - id: 8
+    hash: 7
+    visitation_id: 8
+    time: 9.6487
+    area: 3048.9554
+    swept_only_area: 0.0000
+    cleanable_area: 3156.7290
+    rate: 96.5859
+    wall_distance_rate: 65.3982
+    path_length: 462.1794
+    coverage_efficiency: 77.8747
+    average_velocity: 0.7983
+    performance: 18959.8469
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [4.7422, 5.6420, 6.8417, 3.5424]
+    trajectory_time:
+      - Inter Sector:
+          DYNAMICS_TIPTOE_SLOW: 12.85
+          DYNAMICS_NORMAL: 7.50
+      - Mapping:
+          DYNAMICS_NORMAL: 175.10
+          DYNAMICS_VERY_SLOW: 30.95
+      - Cleaning:
+          DYNAMICS_NORMAL: 102.85
+          DYNAMICS_VERY_SLOW: 145.95
+          DYNAMICS_TIPTOE_SLOW: 86.30
+    sector_configuration:
+      wall_distance: 0.35
+      transition_radius: 0.7
+      deflection_radius: 0.7
+      allow_emerg_tight_turns: false
+      3d_sensors_radius: 2.56
+      force_reclean: false
+      relax_end_of_row_safety_checks: false
+      row_deflection_max: 99999
+      directional_mapping: true
+    computation_time:
+      correct dynamics mode: 0.2732
+      deflection calculation: 1.0635
+      localplanner computation: 563.4670
+      nominal row generation: 1.1654
+      save end of path tail: 0.4043
+      start pose optimization and planning: 10.6774
+      store path checking results: 0.0202
+      total: 578.4941
+      transition calculation: 0.4928
+      update maps: 1.1677
+      wait for costmap: 0.1250
+    motion_primitive_time:
+      - Inter Sector:
+          MOTION_STAR: 6.65
+          MOTION_ARC: 1.40
+          MOTION_WAYPOINTS: 12.55
+      - Mapping:
+          MOTION_STAR: 190.10
+          MOTION_ARC: 15.40
+          MOTION_WAYPOINTS: 0.00
+      - Cleaning:
+          MOTION_STAR: 299.60
+          MOTION_ARC: 37.75
+          MOTION_WAYPOINTS: 0.00
+    velocity_histograms:
+      time_vs_velocity_histogram:
+        - 4.096949815750122
+        - 2.84858512878418
+        - 83.62335157394409
+        - 44.06519603729248
+        - 45.71172547340393
+        - 34.99968338012695
+        - 19.60071396827698
+        - 100.2508065700531
+        - 8.296491861343384
+        - 8.701549053192139
+        - 7.343300580978394
+        - 7.608036756515503
+        - 7.695892095565796
+        - 186.3532309532166
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      bin_size: 0.1
+      distance_vs_velocity_histogram:
+        - 0.2464123835940382
+        - 0.4644321764356296
+        - 25.23857918402271
+        - 14.91921623686734
+        - 20.70646273376198
+        - 19.32568644808947
+        - 12.70586077449159
+        - 73.07770637544196
+        - 7.173894813089944
+        - 8.198951781608187
+        - 7.75231780888066
+        - 8.905295127965164
+        - 9.66725896611856
+        - 253.7197583030904
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      last_bin_threshold: 2
+    coverage_event:
+      - sector: 8
+        phase: ""
+        tour_sequence: 0
+        count: 1
+        name: SECTOR START
+        type: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_base.cpp
+        timestamp_local: 2021-04-28 08:51:09
+        details: ""
+        timestamp: 2021-04-28 12:51:09
+        line: 61
+      - phase: Inter Sector
+        count: 1
+        timestamp_local: 2021-04-28 08:51:10
+        details: ""
+        line: 231
+        sector: 8
+        timestamp: 2021-04-28 12:51:10
+        tour_sequence: 0
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        type: 0
+        name: INTER SECTOR PHASE START
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        phase: Mapping
+        timestamp_local: 2021-04-28 08:51:43
+        type: 0
+        tour_sequence: 0
+        name: MAPPING PHASE START
+        line: 338
+        timestamp: 2021-04-28 12:51:43
+        count: 1
+        sector: 8
+        details: ""
+      - details: ""
+        phase: Mapping To Cleaning
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: MAPPING TO CLEANING PHASE START
+        line: 235
+        sector: 8
+        timestamp: 2021-04-28 12:55:10
+        type: 0
+        count: 1
+        timestamp_local: 2021-04-28 08:55:10
+        tour_sequence: 0
+      - type: 0
+        sector: 8
+        details: ""
+        timestamp: 2021-04-28 12:55:12
+        line: 338
+        phase: Cleaning
+        tour_sequence: 0
+        timestamp_local: 2021-04-28 08:55:12
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+        name: CLEANING PHASE START
+      - count: 1
+        timestamp: 2021-04-28 13:00:48
+        line: 186
+        name: SECTOR COMPLETE
+        phase: ""
+        timestamp_local: 2021-04-28 09:00:48
+        sector: 8
+        type: 0
+        tour_sequence: 0
+        details: ""
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/path_generator/supervisor/path_generator_supervisor.cpp
+      - timestamp_local: 2021-04-28 09:00:48
+        tour_sequence: 0
+        timestamp: 2021-04-28 13:00:48
+        count: 1
+        phase: Report
+        type: 1
+        details: 2 minor spacing violations
+        name: SPACING VIOLATIONS
+        line: 154
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        sector: 8
+      - phase: Report
+        timestamp_local: 2021-04-28 09:00:48
+        timestamp: 2021-04-28 13:00:48
+        tour_sequence: 0
+        details: 3 minor collision violations
+        type: 1
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        name: COLLISION VIOLATIONS
+        line: 158
+        sector: 8
+      - file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        timestamp: 2021-04-28 13:00:48
+        tour_sequence: 0
+        name: CURVATURE VIOLATIONS
+        line: 174
+        details: 22 minor curvature violations
+        phase: Report
+        count: 1
+        sector: 8
+        timestamp_local: 2021-04-28 09:00:48
+        type: 1
+      - type: 1
+        name: SLOPE CONTINUITY VIOLATIONS
+        sector: 8
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/intra_sector_planner/src/debugger/intra_sector_debugger.cpp
+        details: 47 minor slope continuity violations
+        timestamp_local: 2021-04-28 09:00:48
+        tour_sequence: 0
+        timestamp: 2021-04-28 13:00:48
+        phase: Report
+        count: 1
+        line: 182
+      - line: 172
+        timestamp: 2021-04-28 13:00:48
+        details: "sector: 8; Success: 4; time used: 8.50518s"
+        phase: Report
+        count: 1
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        name: SBPL SUCCESS
+        sector: 8
+        timestamp_local: 2021-04-28 09:00:48
+        type: 0
+        tour_sequence: 0
+      - timestamp_local: 2021-04-28 09:00:48
+        name: SBPL FAIL
+        timestamp: 2021-04-28 13:00:48
+        tour_sequence: 0
+        sector: 8
+        file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/coverage_reporter/src/coverage_report.cpp
+        line: 177
+        type: 0
+        details: "sector: 8; Fail: 0; time used: 0s"
+        count: 1
+        phase: Report
+ui_states:
+  - state: clean
+    timestamp: 2021-04-28T08:00:32.297770
+    stamp:
+      secs: 1619611232
+      nsecs: 297770942
+  - timestamp: 2021-04-28T08:00:46.492273
+    state: processing
+    stamp:
+      nsecs: 492273147
+      secs: 1619611246
+  - timestamp: 2021-04-28T08:01:22.458966
+    stamp:
+      secs: 1619611282
+      nsecs: 458966307
+    state: clean
+  - stamp:
+      nsecs: 325611738
+      secs: 1619611366
+    timestamp: 2021-04-28T08:02:46.325611
+    state: mapping
+  - timestamp: 2021-04-28T08:04:13.525648
+    state: clean
+    stamp:
+      secs: 1619611453
+      nsecs: 525648955
+  - stamp:
+      secs: 1619611453
+      nsecs: 558968441
+    timestamp: 2021-04-28T08:04:13.558968
+    state: processing
+  - timestamp: 2021-04-28T08:04:15.458960
+    state: clean
+    stamp:
+      nsecs: 458960588
+      secs: 1619611455
+  - state: processing
+    stamp:
+      secs: 1619611599
+      nsecs: 63053573
+    timestamp: 2021-04-28T08:06:39.063053
+  - stamp:
+      nsecs: 58942487
+      secs: 1619611611
+    state: clean
+    timestamp: 2021-04-28T08:06:51.058942
+  - timestamp: 2021-04-28T08:07:22.966476
+    state: mapping
+    stamp:
+      secs: 1619611642
+      nsecs: 966476149
+  - state: clean
+    stamp:
+      nsecs: 258997906
+      secs: 1619611742
+    timestamp: 2021-04-28T08:09:02.258997
+  - stamp:
+      secs: 1619611742
+      nsecs: 259397251
+    state: processing
+    timestamp: 2021-04-28T08:09:02.259397
+  - state: clean
+    stamp:
+      nsecs: 592505583
+      secs: 1619611743
+    timestamp: 2021-04-28T08:09:03.592505
+  - timestamp: 2021-04-28T08:11:48.892262
+    state: processing
+    stamp:
+      nsecs: 892262356
+      secs: 1619611908
+  - stamp:
+      secs: 1619611923
+      nsecs: 967344899
+    timestamp: 2021-04-28T08:12:03.967344
+    state: clean
+  - state: mapping
+    timestamp: 2021-04-28T08:12:49.726756
+    stamp:
+      secs: 1619611969
+      nsecs: 726756290
+  - state: clean
+    stamp:
+      secs: 1619612079
+      nsecs: 392239802
+    timestamp: 2021-04-28T08:14:39.392239
+  - state: processing
+    stamp:
+      nsecs: 431603871
+      secs: 1619612079
+    timestamp: 2021-04-28T08:14:39.431603
+  - stamp:
+      nsecs: 793305306
+      secs: 1619612080
+    timestamp: 2021-04-28T08:14:40.793305
+    state: clean
+  - state: processing
+    stamp:
+      secs: 1619612235
+      nsecs: 59000765
+    timestamp: 2021-04-28T08:17:15.059000
+  - timestamp: 2021-04-28T08:17:27.925650
+    stamp:
+      nsecs: 925650839
+      secs: 1619612247
+    state: clean
+  - stamp:
+      nsecs: 892254259
+      secs: 1619612281
+    state: mapping
+    timestamp: 2021-04-28T08:18:01.892254
+  - state: clean
+    stamp:
+      nsecs: 159237642
+      secs: 1619612477
+    timestamp: 2021-04-28T08:21:17.159237
+  - stamp:
+      nsecs: 192254692
+      secs: 1619612477
+    state: processing
+    timestamp: 2021-04-28T08:21:17.192254
+  - timestamp: 2021-04-28T08:21:18.964246
+    stamp:
+      nsecs: 964246814
+      secs: 1619612478
+    state: clean
+  - timestamp: 2021-04-28T08:24:50.658944
+    stamp:
+      nsecs: 658944042
+      secs: 1619612690
+    state: processing
+  - timestamp: 2021-04-28T08:25:03.458889
+    state: clean
+    stamp:
+      secs: 1619612703
+      nsecs: 458889275
+  - timestamp: 2021-04-28T08:25:38.792349
+    state: mapping
+    stamp:
+      nsecs: 792349292
+      secs: 1619612738
+  - timestamp: 2021-04-28T08:27:24.959231
+    state: processing
+    stamp:
+      nsecs: 959231702
+      secs: 1619612844
+  - timestamp: 2021-04-28T08:27:26.325724
+    state: clean
+    stamp:
+      nsecs: 325724339
+      secs: 1619612846
+  - timestamp: 2021-04-28T08:29:35.458969
+    state: processing
+    stamp:
+      nsecs: 458969075
+      secs: 1619612975
+  - state: clean
+    timestamp: 2021-04-28T08:29:49.425683
+    stamp:
+      nsecs: 425683969
+      secs: 1619612989
+  - state: processing
+    stamp:
+      secs: 1619613066
+      nsecs: 892319618
+    timestamp: 2021-04-28T08:31:06.892319
+  - state: remote_planning_feedback
+    stamp:
+      secs: 1619613101
+      nsecs: 332247505
+    timestamp: 2021-04-28T08:31:41.332247
+  - state: clean
+    stamp:
+      secs: 1619613103
+      nsecs: 632927839
+    timestamp: 2021-04-28T08:31:43.632927
+  - state: processing
+    stamp:
+      secs: 1619613150
+      nsecs: 999401820
+    timestamp: 2021-04-28T08:32:30.999401
+  - state: remote_planning_feedback
+    stamp:
+      secs: 1619613183
+      nsecs: 635456427
+    timestamp: 2021-04-28T08:33:03.635456
+  - state: remote_pause
+    stamp:
+      secs: 1619613191
+      nsecs: 899386430
+    timestamp: 2021-04-28T08:33:11.899386
+  - state: remote_detour
+    stamp:
+      secs: 1619613227
+      nsecs: 966002897
+    timestamp: 2021-04-28T08:33:47.966002
+  - state: clean
+    stamp:
+      secs: 1619613298
+      nsecs: 732773729
+    timestamp: 2021-04-28T08:34:58.732773
+  - state: processing
+    stamp:
+      secs: 1619613299
+      nsecs: 666029805
+    timestamp: 2021-04-28T08:34:59.666029
+  - state: clean
+    stamp:
+      secs: 1619613314
+      nsecs: 766013523
+    timestamp: 2021-04-28T08:35:14.766013
+  - state: mapping
+    stamp:
+      secs: 1619613329
+      nsecs: 266007102
+    timestamp: 2021-04-28T08:35:29.266007
+  - state: clean
+    stamp:
+      secs: 1619613519
+      nsecs: 899842899
+    timestamp: 2021-04-28T08:38:39.899842
+  - state: processing
+    stamp:
+      secs: 1619613519
+      nsecs: 903891340
+    timestamp: 2021-04-28T08:38:39.903891
+  - state: clean
+    stamp:
+      secs: 1619613521
+      nsecs: 832650180
+    timestamp: 2021-04-28T08:38:41.832650
+  - state: processing
+    stamp:
+      secs: 1619613832
+      nsecs: 66188130
+    timestamp: 2021-04-28T08:43:52.066188
+  - state: clean
+    stamp:
+      secs: 1619613852
+      nsecs: 599453658
+    timestamp: 2021-04-28T08:44:12.599453
+  - state: mapping
+    stamp:
+      secs: 1619613924
+      nsecs: 199315273
+    timestamp: 2021-04-28T08:45:24.199315
+  - state: clean
+    stamp:
+      secs: 1619614187
+      nsecs: 666056532
+    timestamp: 2021-04-28T08:49:47.666056
+  - state: processing
+    stamp:
+      secs: 1619614187
+      nsecs: 670800352
+    timestamp: 2021-04-28T08:49:47.670800
+  - state: clean
+    stamp:
+      secs: 1619614189
+      nsecs: 504120223
+    timestamp: 2021-04-28T08:49:49.504120
+  - state: processing
+    stamp:
+      secs: 1619614270
+      nsecs: 299404154
+    timestamp: 2021-04-28T08:51:10.299404
+  - state: clean
+    stamp:
+      secs: 1619614282
+      nsecs: 765984611
+    timestamp: 2021-04-28T08:51:22.765984
+  - state: mapping
+    stamp:
+      secs: 1619614303
+      nsecs: 667603964
+    timestamp: 2021-04-28T08:51:43.667603
+  - state: processing
+    stamp:
+      secs: 1619614510
+      nsecs: 568824324
+    timestamp: 2021-04-28T08:55:10.568824
+  - state: clean
+    stamp:
+      secs: 1619614512
+      nsecs: 665967375
+    timestamp: 2021-04-28T08:55:12.665967
+  - state: going_home
+    stamp:
+      secs: 1619614849
+      nsecs: 165967240
+    timestamp: 2021-04-28T09:00:49.165967
+  - state: processing
+    stamp:
+      secs: 1619614849
+      nsecs: 308165773
+    timestamp: 2021-04-28T09:00:49.308165
+total:
+  time: 60.1829
+  area: 12601.4054
+  swept_only_area: 0.0000
+  performance: 12563.1073
+  water_usage: [25.1379, 29.4465, 35.1914, 19.3930]
+  cleanable_area: 14549.4560
+  specified_cleanable_area: 14151.0302
+  rate: 86.6108
+  all_sectors_coverage_rate: 88.2484
+  path_length: 2198.1625
+  coverage_efficiency: 67.6729
+  average_velocity: 0.6087
+  collision_count: 0
+  trajectory_time:
+    - Inter Sector:
+        DYNAMICS_NORMAL: 246.10
+        DYNAMICS_VERY_SLOW: 19.55
+        DYNAMICS_TIPTOE_SLOW: 196.47
+        OBSTACLE_PAUSE: 72.95
+        USER_PAUSE: 36.10
+        DETOUR_MODE: 89.34
+    - Mapping:
+        DYNAMICS_TIPTOE_SLOW: 261.15
+        DYNAMICS_NORMAL: 794.50
+        DYNAMICS_VERY_SLOW: 159.50
+        OBSTACLE_PAUSE: 36.31
+    - Cleaning:
+        DYNAMICS_TIPTOE_SLOW: 468.29
+        DYNAMICS_NORMAL: 265.14
+        DYNAMICS_VERY_SLOW: 774.30
+        OBSTACLE_PAUSE: 12.05
+  computation_time:
+    correct dynamics mode: 0.9943
+    deflection calculation: 4.6981
+    localplanner computation: 3429.8353
+    nominal row generation: 11.1592
+    save end of path tail: 3.0601
+    start pose optimization and planning: 137.2331
+    store path checking results: 0.0871
+    total: 3598.3325
+    transition calculation: 3.3379
+    update maps: 10.0912
+    wait for costmap: 1.4000
+  motion_primitive_time:
+    - Inter Sector:
+        MOTION_STAR: 36.35
+        MOTION_ARC: 8.85
+        MOTION_WAYPOINTS: 453.45
+    - Mapping:
+        MOTION_STAR: 1011.10
+        MOTION_ARC: 158.00
+        MOTION_WAYPOINTS: 43.05
+    - Cleaning:
+        MOTION_STAR: 1244.40
+        MOTION_ARC: 275.50
+        MOTION_WAYPOINTS: 18.55
+  wall_distance_histogram: [0.0289, 0.0000, 0.0000, 0.1374, 0.1657, 1.7719, 24.5302, 28.4675, 11.9067, 10.9357, 3.7799, 18.2760]
+  tracking_error_statistics:
+    last_bin_threshold_of_location_error: 0.6
+    biggest_heading_error: 0.0808417797088623
+    RMSE_of_heading_error: 0.006523891934215882
+    bin_size_of_location_error_percentage_histogram: 0.05
+    bin_size_of_heading_error_percentage_histogram: 0.05
+    last_bin_threshold_of_heading_error: 0.6
+    bin_size_of_location_error_over_event_histogram: 0.1
+    heading_error_over_event_histogram:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    location_error_over_event_histogram:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    biggest_location_error: 0.09140733553677906
+    bin_size_of_heading_error_over_event_histogram: 0.1
+    heading_error_percentage_histogram:
+      - 99.93339253996447
+      - 0.06660746003552398
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    RMSE_of_location_error: 0.008973200300073772
+    location_error_percentage_histogram:
+      - 99.79425695677917
+      - 0.2057430432208407
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+  velocity_histograms:
+    last_bin_threshold: 2
+    time_vs_velocity_histogram:
+      - 37.27526521682739
+      - 39.09572625160217
+      - 638.0865161418915
+      - 242.3985493183136
+      - 162.0518393516541
+      - 154.3500161170959
+      - 141.5584318637848
+      - 538.8009316921234
+      - 44.59999513626099
+      - 42.55556488037109
+      - 39.0397801399231
+      - 36.96047592163086
+      - 33.84800410270691
+      - 627.2997715473175
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    distance_vs_velocity_histogram:
+      - 2.212506168285535
+      - 5.977522100000973
+      - 191.0128938074475
+      - 79.90747724823063
+      - 73.52154641576013
+      - 85.57411629067782
+      - 92.64793845048162
+      - 392.5997286320283
+      - 38.19258747185884
+      - 40.66040822405175
+      - 41.25422796374099
+      - 42.79379773676133
+      - 42.45528959189443
+      - 852.7488014387977
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    bin_size: 0.1
+  time_histograms:
+    histograms:
+      - name: 15BicycleMCDriver_DriverThread_328
+        lower: 0
+        upper: 0.05
+        n_bins: 22
+        bin_width: 0.0025
+        bins:
+          - 0
+          - 0
+          - 0
+          - 2
+          - 11
+          - 19
+          - 48
+          - 112
+          - 266
+          - 1154
+          - 121900
+          - 59612
+          - 1148
+          - 230
+          - 107
+          - 36
+          - 21
+          - 9
+          - 9
+          - 4
+          - 2
+          - 6
+        mean: 0.02457839
+        count: 184696
+        variance: 1.915075e-06
+      - name: 16ControlSimulator_Simulate_114
+        lower: 0
+        upper: 0.03
+        n_bins: 22
+        bin_width: 0.0015
+        bins:
+          - 0
+          - 13410
+          - 67
+          - 19
+          - 7
+          - 6
+          - 1
+          - 1
+          - 0
+          - 1
+          - 1
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        mean: 0.0007697587
+        count: 13513
+        variance: 8.419481e-08
+      - name: 25LocalControllerSupervisor_RunControlLoop_760
+        lower: 0
+        upper: 0.1
+        n_bins: 22
+        bin_width: 0.005
+        bins:
+          - 0
+          - 66420
+          - 409
+          - 104
+          - 64
+          - 81
+          - 97
+          - 107
+          - 86
+          - 71
+          - 49
+          - 42
+          - 17
+          - 15
+          - 4
+          - 7
+          - 3
+          - 8
+          - 1
+          - 1
+          - 1
+          - 2
+        count: 67589
+        variance: 1.342006e-05
+        mean: 0.002875431
+      - name: 25LocalControllerSupervisor_RunSafetyCheck_971
+        lower: 0
+        upper: 0.1
+        n_bins: 22
+        bin_width: 0.005
+        bins:
+          - 0
+          - 66441
+          - 369
+          - 103
+          - 64
+          - 79
+          - 98
+          - 107
+          - 85
+          - 71
+          - 48
+          - 42
+          - 16
+          - 15
+          - 5
+          - 6
+          - 3
+          - 8
+          - 1
+          - 1
+          - 1
+          - 2
+        count: 67565
+        variance: 1.330707e-05
+        mean: 0.002870162
+      - name: 27LocalControllerActionServer_UpdateGoal_249
+        lower: 0
+        upper: 0.1
+        n_bins: 22
+        bin_width: 0.005
+        bins:
+          - 0
+          - 6
+          - 0
+          - 1
+          - 5
+          - 3
+          - 12
+          - 8
+          - 22
+          - 66
+          - 45562
+          - 21789
+          - 67
+          - 21
+          - 6
+          - 8
+          - 4
+          - 8
+          - 0
+          - 2
+          - 1
+          - 2
+        mean: 0.0491194
+        count: 67593
+        variance: 6.546397e-06
+      - name: _geometry_msgs::PoseArray nav_msgs::util::SearchBadPose(const PoseArray&, const std::vector<geometry_msgs::Twist_<std::allocator<void> > >&, const nav_msgs::util::ObstacleCheckData&, nav_msgs::util::ObstacleStatus&, nav_msgs::util::ObstacleStatus&)_104
+        lower: 0
+        upper: 0.005
+        n_bins: 22
+        bin_width: 0.00025
+        bins:
+          - 0
+          - 57176
+          - 8806
+          - 1001
+          - 255
+          - 111
+          - 56
+          - 42
+          - 28
+          - 15
+          - 12
+          - 8
+          - 8
+          - 3
+          - 3
+          - 1
+          - 5
+          - 5
+          - 7
+          - 1
+          - 3
+          - 19
+        count: 67565
+        variance: 3.381102e-08
+        mean: 0.0001766502
+version:
+  branch: HEAD
+  commit: aff2aca
+  package: avidbots-master-xenial
+  deb: 2.8.0-rc3-11248-xenial
+configuration_override:
+  NOTE: The !<tag:yaml.org,2002:str>tags below are a byproduct of parsing !!str tags in the original files and should be interpreted as such.
+  customer_settings_yaml:
+    preferences:
+      autoupdate:
+        repo: live
+        version: disabled
+      battery:
+        voltage:
+          critical: 33.200000
+          max: 38
+          min: 32
+        type: Custom
+      require_checklist: true
+      time_zone: America/New_York
+    logins: ""
+    hash: 78e15256a893a909181394eec9406237
+  calibration_yaml:
+    calibration:
+      laser:
+        front:
+          scan_samples: 852
+          angle:
+            min: -1.841320
+            max: 1.871870
+            offset: -0.015272
+        back:
+          pose:
+            yaw: 3.137510
+            y: 0.010121
+          angle:
+            max: -1.350000
+            min: 1.350000
+            offset: 0
+          scan_samples: 858
+      technician_passcode: !<tag:yaml.org,2002:str> ""
+      camera:
+        left:
+          rpy:
+            - 1.603995
+            - 0.516090
+            - 0.363387
+          xyz:
+            - 0.129930
+            - 0.154409
+            - 0.971188
+          serial: !<tag:yaml.org,2002:str> 944622072620
+        right:
+          rpy:
+            - 1.547928
+            - 0.556081
+            - -0.381683
+          serial: !<tag:yaml.org,2002:str> 944122072296
+          xyz:
+            - 0.116373
+            - -0.167604
+            - 1.000958
+      wheel:
+        back:
+          separation: 0.546908
+        front:
+          steering: 0.013740
+    laser-type:
+      back: Hokuyo UST-20LX
+      front: Hokuyo UST-20LX
+  calibration_sh: |
+    # NOTE:
+    # This file was autogenerated based on values entered in the Avidbots Command Center Robot Settings page.
+    # Please do not edit this file directly since your changes will be overwritten. Instead, go to this robot's Settings page and edit there.
+    
+    #!/bin/bash
+    export AVIDBOTS_ROBOT_MODEL="neo"
+    export AVIDBOTS_ROBOT_HARDWARE_VERSION="1_5_3"
+    export AVIDBOTS_ROBOT_CLEANING_WIDTH="32"
+    export AVIDBOTS_ROBOT_SQUEEGEE_WIDTH="large"
+    export CLEANING_HEAD_TYPE="cylindrical"
+    export AVIDBOTS_SIDE_SWEEPER="false"
+    export LASER_FRONT_MIN="-1.84132"
+    export LASER_FRONT_MAX="1.87187"
+    export LASER_BACK_MIN="1.35"
+    export LASER_BACK_MAX="-1.35"
+    export LEFT_CAMERA_SERIAL="944622072620"
+    export RIGHT_CAMERA_SERIAL="944122072296"
+    export LASER_TYPE_FRONT="Hokuyo UST-20LX"
+    export LASER_TYPE_BACK="Hokuyo UST-20LX"
+    export LASER_MAX_RANGE="19.95"
+    export LASER_FRONT_USE_UST20LX="true"
+    export LASER_BACK_USE_UST20LX="true"
+    
+camera_software_version:
+  branch: HEAD
+  commit: aff2aca
+  package: avidbots-3d-sensor-xenial
+  deb: 2.8.0-rc3-11248-xenial

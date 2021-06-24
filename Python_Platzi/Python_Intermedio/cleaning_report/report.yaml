@@ -1,0 +1,652 @@
+# id: sector number
+# flow_mode: [mode 0, 1, 2, 3]
+# pressure: [mode 0, 1, 2]
+# vacuum: [enabled bool]
+# time: [min]
+# computation_time: [s]
+# voltage: [V]
+# area: [sq.ft]
+# swept area: [sq.ft]
+# coverage_rate: [%]
+# wall_distance_rate: [%]
+# performance: [sq.ft/hr]
+# water_usage: list [mode 1, 2, 3, 4] in [L]
+# path_length: [m]
+# coverage_efficiency: [%]
+# average_velocity: [m/s]
+# trajectory_time: [s]
+# sector_configuration/wall_distance: [m]
+# sector_configuration/deflection_radius: [m]
+# wall_distance_histogram: list [distance interval 0cm~5cm, 5cm~10cm,..., 55cm+] in [%]
+# velocity_histograms: 
+#  - bin_size: [m/s]
+#  - last_bin_threshold: [m/s]
+#  - time_vs_velocity_histogram: [s vs m/s]
+#  - distance_vs_velocity_histogram: [m vs m/s]
+# time_histograms: [histogram msg]
+reality_type: physical
+hardware_version: 1_5_1
+cleaning_head_width: 24
+has_side_sweeper: false
+squeegee_size: small
+robot_description: neo24
+user_name: Duan
+user_id: 4086
+cleaning_plan: 39699-1628-21_KTPH_L4_Back_Corridor_Renal_Ctr_
+flow_mode: 2
+pressure: 1
+vacuum: 1
+start_time: 2021-06-17 11:12:44
+end_time: 2021-06-17 11:56:42
+start_time_local: 2021-06-17 07:12:44
+end_time_local: 2021-06-17 07:56:42
+start_voltage: 39.40000152587891
+end_voltage: 36.40000152587891
+localization:
+  localization_algorithm:
+    name: amcl
+  start_pose_corrector_mode:
+    front_laser_min_score: 0.59999999999999998
+    front_laser_score: ""
+    min_score: 0.40000000000000002
+    name: scan_matcher
+    score: 0.68009132146835327
+coverage_event:
+  - sector: -1
+    type: 0
+    line: 671
+    file: /root/robot-dev/repos/autonomy/ros_indigo/src/planning/inter_sector_planner/src/inter_sector.cpp
+    details: ""
+    count: 1
+    timestamp: 2021-06-17 11:56:44
+    timestamp_local: 2021-06-17 07:56:44
+    phase: ""
+    tour_sequence: 0
+    name: COMPLETE ALL SECTORS
+counters:
+  CP_FailedDeflection: 0
+  CP_PathRemoved: 1
+  CP_VerySlowVelocityCommand: 0
+  MC_Driver_Motor_10_Amps_Limit: 3
+  SYS_Memory_Used_00_to_01_GB: 530
+  SYS_Memory_Used_02_to_03_GB: 1
+  SYS_Memory_Used_03_to_04_GB: 287
+  SYS_Memory_Used_04_to_05_GB: 242
+  SYS_Sensor_Front_Laser_Rate_Failure: 40
+sectors:
+  - id: 0
+    hash: 0
+    visitation_id: 0
+    time: 23.5904
+    area: 1710.7874
+    swept_only_area: 0.0000
+    cleanable_area: 1836.6712
+    rate: 93.1461
+    wall_distance_rate: 53.0665
+    path_length: 346.6150
+    coverage_efficiency: 77.3258
+    average_velocity: 0.2449
+    performance: 4351.2309
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [7.8777, 7.8777, 8.5599, 6.8544]
+  - id: 1
+    hash: 1
+    visitation_id: 1
+    time: 20.3810
+    area: 1370.1099
+    swept_only_area: 0.0000
+    cleanable_area: 1477.5336
+    rate: 92.7295
+    wall_distance_rate: 14.1520
+    path_length: 349.6247
+    coverage_efficiency: 61.3944
+    average_velocity: 0.2859
+    performance: 4033.4958
+    collision_count: 0
+    minor_collision_count: 0
+    water_usage: [7.9510, 7.9510, 8.6303, 6.9321]
+ui_states:
+  - timestamp: 2021-06-17T07:12:40.454561
+    stamp:
+      nsecs: 454561179
+      secs: 1623928360
+    state: clean
+  - timestamp: 2021-06-17T07:12:50.016621
+    state: processing
+    stamp:
+      secs: 1623928370
+      nsecs: 16621999
+  - state: clean
+    stamp:
+      secs: 1623928409
+      nsecs: 183316706
+    timestamp: 2021-06-17T07:13:29.183316
+  - timestamp: 2021-06-17T07:13:42.083292
+    state: mapping
+    stamp:
+      secs: 1623928422
+      nsecs: 83292283
+  - state: remote_planning_feedback
+    stamp:
+      secs: 1623928709
+      nsecs: 184743636
+    timestamp: 2021-06-17T07:18:29.184743
+  - state: remote_pause
+    stamp:
+      secs: 1623928794
+      nsecs: 354050286
+    timestamp: 2021-06-17T07:19:54.354050
+  - state: clean
+    stamp:
+      secs: 1623928889
+      nsecs: 52166150
+    timestamp: 2021-06-17T07:21:29.052166
+  - state: mapping
+    stamp:
+      secs: 1623928889
+      nsecs: 52724603
+    timestamp: 2021-06-17T07:21:29.052724
+  - state: processing
+    stamp:
+      secs: 1623929169
+      nsecs: 552606530
+    timestamp: 2021-06-17T07:26:09.552606
+  - state: clean
+    stamp:
+      secs: 1623929183
+      nsecs: 152672491
+    timestamp: 2021-06-17T07:26:23.152672
+  - state: processing
+    stamp:
+      secs: 1623929780
+      nsecs: 585453686
+    timestamp: 2021-06-17T07:36:20.585453
+  - state: clean
+    stamp:
+      secs: 1623929819
+      nsecs: 18856534
+    timestamp: 2021-06-17T07:36:59.018856
+  - state: mapping
+    stamp:
+      secs: 1623930103
+      nsecs: 485531072
+    timestamp: 2021-06-17T07:41:43.485531
+  - state: clean
+    stamp:
+      secs: 1623930532
+      nsecs: 318888811
+    timestamp: 2021-06-17T07:48:52.318888
+  - state: processing
+    stamp:
+      secs: 1623930532
+      nsecs: 324057950
+    timestamp: 2021-06-17T07:48:52.324057
+  - timestamp: 2021-06-17T07:48:59.652305
+    state: clean
+    stamp:
+      secs: 1623930539
+      nsecs: 652305909
+  - state: going_home
+    stamp:
+      secs: 1623931004
+      nsecs: 552632204
+    timestamp: 2021-06-17T07:56:44.552632
+  - state: processing
+    stamp:
+      secs: 1623931004
+      nsecs: 652122858
+    timestamp: 2021-06-17T07:56:44.652122
+total:
+  time: 43.9714
+  area: 3106.3808
+  swept_only_area: 0.0000
+  performance: 4238.7318
+  water_usage: [15.8287, 15.8287, 17.1902, 13.7865]
+  cleanable_area: 3321.4435
+  specified_cleanable_area: 3321.4435
+  rate: 93.5250
+  all_sectors_coverage_rate: 93.5250
+  path_length: 696.2397
+  coverage_efficiency: 69.8991
+  average_velocity: 0.2639
+  collision_count: 0
+  trajectory_time:
+    - Inter Sector:
+        DYNAMICS_VERY_SLOW: 296.04
+    - Mapping:
+        DYNAMICS_VERY_SLOW: 1008.78
+        OBSTACLE_PAUSE: 69.89
+        USER_PAUSE: 94.70
+        DYNAMICS_NORMAL: 0.90
+    - Cleaning:
+        DYNAMICS_VERY_SLOW: 1054.09
+        OBSTACLE_PAUSE: 4.56
+  computation_time:
+    correct dynamics mode: 0.2630
+    deflection calculation: 1.3234
+    localplanner computation: 2533.1920
+    nominal row generation: 2.3986
+    save end of path tail: 28.3936
+    start pose optimization and planning: 28.7306
+    store path checking results: 0.0388
+    total: 2632.8526
+    transition calculation: 36.5942
+    update maps: 2.3377
+    wait for costmap: 0.1000
+  motion_primitive_time:
+    - Inter Sector:
+        MOTION_STAR: 3.25
+        MOTION_ARC: 0.00
+        MOTION_WAYPOINTS: 294.55
+    - Mapping:
+        MOTION_STAR: 8388.65
+        MOTION_ARC: 0.90
+        MOTION_WAYPOINTS: 688.15
+    - Cleaning:
+        MOTION_STAR: 972.00
+        MOTION_ARC: 4.45
+        MOTION_WAYPOINTS: 76.15
+  wall_distance_histogram: [14.7708, 0.0000, 0.0000, 20.1537, 36.0560, 12.0155, 8.1765, 4.3139, 1.3808, 0.8682, 0.3041, 1.9604]
+  tracking_error_statistics:
+    bin_size_of_location_error_percentage_histogram: 0.05
+    last_bin_threshold_of_location_error: 0.6
+    bin_size_of_location_error_over_event_histogram: 0.1
+    bin_size_of_heading_error_percentage_histogram: 0.05
+    last_bin_threshold_of_heading_error: 0.6
+    bin_size_of_heading_error_over_event_histogram: 0.1
+    location_error_percentage_histogram:
+      - 96.60781866096019
+      - 0.3546731657056807
+      - 0.0713309160078464
+      - 0.005944243000653867
+      - 0.007925657334205156
+      - 0.1882343616873725
+      - 0.01188848600130773
+      - 0.005944243000653867
+      - 0.005944243000653867
+      - 0.003962828667102578
+      - 0.2120113336899879
+      - 0.01386990033485902
+      - 2.510451960609483
+    location_error_over_event_histogram:
+      - 2
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+    biggest_location_error: 1.023897790415105
+    RMSE_of_location_error: 0.13610861041233
+    heading_error_percentage_histogram:
+      - 96.92286353999485
+      - 0.103033545344667
+      - 0.003962828667102578
+      - 0.005944243000653867
+      - 0.003962828667102578
+      - 0.007925657334205156
+      - 0.1862529473538212
+      - 0.009907071667756444
+      - 0.003962828667102578
+      - 0.005944243000653867
+      - 0.005944243000653867
+      - 0.003962828667102578
+      - 2.73633319463433
+    biggest_heading_error: 1.360419034957886
+    heading_error_over_event_histogram:
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+    RMSE_of_heading_error: 0.2066415320361858
+  velocity_histograms:
+    bin_size: 0.1
+    last_bin_threshold: 2
+    time_vs_velocity_histogram:
+      - 18.7666974067688
+      - 30.24885511398315
+      - 1185.337091445923
+      - 823.0389819145203
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    distance_vs_velocity_histogram:
+      - 1.170018136754323
+      - 4.613446101089496
+      - 356.0715671862332
+      - 249.8196521668639
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+  time_histograms:
+    histograms:
+      - name: 15BicycleMCDriver_DriverThread_328
+        lower: 0
+        upper: 0.05
+        n_bins: 22
+        bin_width: 0.0025
+        bins:
+          - 0
+          - 0
+          - 0
+          - 1
+          - 0
+          - 0
+          - 3
+          - 6
+          - 58
+          - 627
+          - 92309
+          - 35720
+          - 633
+          - 56
+          - 6
+          - 2
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 2
+        count: 129423
+        mean: 0.0244537
+        variance: 1.443893e-06
+      - name: 16ControlSimulator_Simulate_114
+        lower: 0
+        upper: 0.03
+        n_bins: 22
+        bin_width: 0.0015
+        bins:
+          - 0
+          - 9710
+          - 327
+          - 40
+          - 9
+          - 5
+          - 4
+          - 1
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        count: 10096
+        mean: 0.0008213153
+        variance: 1.696368e-07
+      - name: 25LocalControllerSupervisor_RunControlLoop_718
+        lower: 0
+        upper: 0.1
+        n_bins: 22
+        bin_width: 0.005
+        bins:
+          - 0
+          - 48525
+          - 1436
+          - 235
+          - 53
+          - 28
+          - 22
+          - 16
+          - 24
+          - 16
+          - 22
+          - 14
+          - 14
+          - 11
+          - 13
+          - 9
+          - 6
+          - 6
+          - 2
+          - 5
+          - 3
+          - 26
+        variance: 1.644841e-05
+        count: 50486
+        mean: 0.002944182
+      - name: 25LocalControllerSupervisor_RunSafetyCheck_929
+        lower: 0
+        upper: 0.1
+        n_bins: 22
+        bin_width: 0.005
+        bins:
+          - 0
+          - 48548
+          - 1414
+          - 229
+          - 52
+          - 28
+          - 22
+          - 16
+          - 24
+          - 16
+          - 23
+          - 13
+          - 14
+          - 11
+          - 13
+          - 9
+          - 6
+          - 6
+          - 2
+          - 5
+          - 3
+          - 26
+        variance: 1.641702e-05
+        count: 50480
+        mean: 0.002940471
+      - name: 27LocalControllerActionServer_UpdateGoal_249
+        lower: 0
+        upper: 0.1
+        n_bins: 22
+        bin_width: 0.005
+        bins:
+          - 0
+          - 31
+          - 5
+          - 1
+          - 7
+          - 6
+          - 10
+          - 14
+          - 11
+          - 64
+          - 35979
+          - 14239
+          - 62
+          - 12
+          - 15
+          - 10
+          - 6
+          - 6
+          - 2
+          - 5
+          - 3
+          - 26
+        variance: 9.475661e-06
+        count: 50514
+        mean: 0.04892515
+      - name: _geometry_msgs::PoseArray nav_msgs::util::SearchBadPose(const PoseArray&, const std::vector<geometry_msgs::Twist_<std::allocator<void> > >&, const nav_msgs::util::ObstacleCheckData&, nav_msgs::util::ObstacleStatus&, nav_msgs::util::ObstacleStatus&)_104
+        lower: 0
+        upper: 0.005
+        n_bins: 22
+        bin_width: 0.00025
+        bins:
+          - 0
+          - 28065
+          - 13084
+          - 7111
+          - 1261
+          - 485
+          - 216
+          - 84
+          - 40
+          - 28
+          - 25
+          - 9
+          - 12
+          - 12
+          - 11
+          - 1
+          - 9
+          - 3
+          - 5
+          - 3
+          - 2
+          - 14
+        count: 50480
+        mean: 0.0003057894
+        variance: 8.184694e-08
+version:
+  branch: HEAD
+  commit: f20ad93
+  package: avidbots-master-xenial
+  deb: 2.7.1-rc0-10321-xenial
+configuration_override:
+  NOTE: The !<tag:yaml.org,2002:str>tags below are a byproduct of parsing !!str tags in the original files and should be interpreted as such.
+  customer_settings_yaml:
+    preferences:
+      require_checklist: true
+      battery:
+        voltage:
+          max: 38
+          critical: 33.200000
+          min: 32
+        type: Wet Lead Acid
+      autoupdate:
+        repo: live
+        version: 2.7.1-rc0-10321
+      time_zone: Asia/Singapore
+    logins: ""
+    hash: b125e728a0daa41a730bbae890f519fe
+  configuration_override_yaml: |
+    dynamic_properties:
+        max_vels: [0.5, 1.15, 0.5, 1.4]
+    intra_sector_planner:
+        sector_default:
+            allow_emergency_tight_turns: true
+    
+    cleaning:
+      mode_1_max_flow: 0.7
+    
+  calibration_yaml:
+    calibration:
+      laser:
+        front:
+          angle:
+            min: -1.846350
+            max: 1.853460
+            offset: 0
+          scan_samples: 857
+        back:
+          angle:
+            offset: 0
+            max: 1.350000
+            min: -1.350000
+          scan_samples: 858
+          pose:
+            yaw: 3.141592
+            y: 0
+      camera:
+        left:
+          serial: !<tag:yaml.org,2002:str> 2501003011
+          xyz:
+            - -0.004000
+            - 0.161000
+            - 0.948400
+          rpy:
+            - 0.024626
+            - 0.207318
+            - 0.418879
+        right:
+          rpy:
+            - -0.037126
+            - 0.237318
+            - -0.388879
+          serial: !<tag:yaml.org,2002:str> 2431006062
+          xyz:
+            - -0.005000
+            - -0.202000
+            - 0.988400
+      wheel:
+        back:
+          separation: 0.540800
+      technician_passcode: !<tag:yaml.org,2002:str> ""
+    laser-type:
+      front: Hokuyo UST-20LX
+      back: Hokuyo UST-20LX
+    dynamic_properties:
+      max_vels:
+        normal: 0.300000
+        very_slow: 0.300000
+        fast: 0.300000
+        slow: 0.300000
+        tiptoe_slow: 0.300000
+  calibration_sh: |
+    # NOTE:
+    # This file was autogenerated based on values entered in the Avidbots Command Center Robot Settings page.
+    # Please do not edit this file directly since your changes will be overwritten. Instead, go to this robot's Settings page and edit there.
+    
+    #!/bin/bash
+    export AVIDBOTS_ROBOT_MODEL="neo"
+    export AVIDBOTS_ROBOT_HARDWARE_VERSION="1_5_1"
+    export AVIDBOTS_ROBOT_CLEANING_WIDTH="24"
+    export AVIDBOTS_ROBOT_SQUEEGEE_WIDTH="small"
+    export CLEANING_HEAD_TYPE="cylindrical"
+    export AVIDBOTS_SIDE_SWEEPER="false"
+    export LASER_FRONT_MIN="-1.84635"
+    export LASER_FRONT_MAX="1.85346"
+    export LASER_BACK_MIN="-1.35"
+    export LASER_BACK_MAX="1.35"
+    export LEFT_CAMERA_SERIAL="2501003011"
+    export RIGHT_CAMERA_SERIAL="2431006062"
+    export LASER_TYPE_FRONT="Hokuyo UST-20LX"
+    export LASER_TYPE_BACK="Hokuyo UST-20LX"
+    export LASER_MAX_RANGE="19.95"
+    export LASER_FRONT_USE_UST20LX="true"
+    export LASER_BACK_USE_UST20LX="true"
+    
+camera_software_version:
+  branch: HEAD
+  commit: f20ad93
+  package: avidbots-3d-sensor-xenial
+  deb: 2.7.1-rc0-10321-xenial
